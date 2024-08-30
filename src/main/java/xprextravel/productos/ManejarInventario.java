@@ -12,9 +12,30 @@ public class ManejarInventario {
     }
     
     public void agregarProducto (Producto prod) {
-        if (!inventario.containsKey(prod))
+        if (!inventario.containsKey(prod)) {
+            if (prod.getCodigo().length() < 1) {
+                JOptionPane.showMessageDialog(null, "El producto necesita un código valido", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            if (prod.getNombre().length() < 1) {
+                JOptionPane.showMessageDialog(null, "El producto debe tener un nombre", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            if (prod.getCantidad() < 0) {
+                JOptionPane.showMessageDialog(null, "Un producto no puede tener una cantidad negativa", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            if (prod.getPrecio() < 0) {
+                JOptionPane.showMessageDialog(null, "Un producto no puede un precio negativo", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
             inventario.put(prod.getCodigo(), prod);
-        else
+            JOptionPane.showMessageDialog(null, "Se ha registrado el producto "+prod.getNombre());
+        } else
             JOptionPane.showMessageDialog(null, "El producto ya se encuentra en el inventario", "Error", JOptionPane.ERROR_MESSAGE);
     }
     
@@ -39,13 +60,27 @@ public class ManejarInventario {
         inventario.put(prod.getCodigo(), prod);
     }
     
-    public String listarProductos () {
-        String resp = "";
-        
-        for (Producto prod : inventario.values()) {
-            resp += prod + "\n";
+    public String listarProductosPorCategoria (String categoria) {
+        if (inventario.size() > 0) {
+            String resp = "";
+            double precioTotal = 0;
+
+            for (Producto prod : inventario.values()) {
+                if (categoria == null || prod.getCategoria().equals(categoria)) {
+                    resp += prod + "\n";
+                    precioTotal += prod.getPrecio() * prod.getCantidad();
+                }
+            }
+
+            resp += "\nPrecio total: "+precioTotal;
+
+            return resp;
+        } else {
+            return "No hay nada registrado...";
         }
-        
-        return resp;
+    }
+    
+    public String listarProductos () {
+        return listarProductosPorCategoria(null);
     }
 }

@@ -5,28 +5,33 @@ public class Producto {
     private String codigo;
     private String categoria;
     private int cantidad;
+    private double precio;
 
-    //Por defecto el producto no cuenta con canatidades, amenos que se especifique
-    public Producto (String nombre, String codigo, String categoria) {
+    public Producto (String nombre, String codigo, String categoria, double precio, int cantidad) {
         this.nombre = nombre;
         this.codigo = codigo;
-        this.categoria = categoria;
-        this.cantidad = 0;
-    }
-    
-    public Producto (String nombre, String codigo, String categoria, int cantidad) {
-        this.nombre = nombre;
-        this.codigo = codigo;
-        this.categoria = categoria;
+        if (categoria.length() < 1)
+            this.categoria = "Sin categoria.";
+        else
+            this.categoria = categoria;
         this.cantidad = cantidad;
+        this.precio = precio;
     }
-    
+        
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
     public String getCodigo() {
@@ -55,6 +60,6 @@ public class Producto {
 
     @Override
     public String toString() {
-        return nombre + " (" + codigo + ", "+categoria+") tiene " + cantidad + " unidades";
+        return nombre + " (" + codigo + ", "+categoria+") tiene " + cantidad + " unidades y cuesta "+precio+"¤";
     }
 }

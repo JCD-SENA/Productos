@@ -2,6 +2,7 @@ package xprextravel.productos;
 
 public class Principal {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        VentanaRegistrar ventanaPrincipal = new VentanaRegistrar();
+        ventanaPrincipal.setVisible(true);
     }
 }
