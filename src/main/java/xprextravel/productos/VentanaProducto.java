@@ -17,9 +17,6 @@ public class VentanaProducto extends javax.swing.JFrame {
     
     public VentanaProducto() {
         initComponents();
-        System.out.println("VentanaProducto.<init>()");
-        System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
-        System.out.println("SpinPrecio1: "+spinPrecio1.getValue());
     }
 
     /**
@@ -163,7 +160,8 @@ public class VentanaProducto extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,7 +197,8 @@ public class VentanaProducto extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -224,8 +223,8 @@ public class VentanaProducto extends javax.swing.JFrame {
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         System.out.println("VentanaProducto.btnEditarActionPerformed()");
-       System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
-       System.out.println("SpinPrecio1: "+spinPrecio1.getValue());
+        System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
+        System.out.println("SpinPrecio1: "+spinPrecio1.getValue());
              
              
         if (txtNombre1.getText().length() < 1) {
@@ -241,12 +240,12 @@ public class VentanaProducto extends javax.swing.JFrame {
         if (EtiCategoria1.getText().length() < 1)
             prod.setCategoria("Sin categoria.");
 
-        /*if ((int) spinPrecio1.getValue() < 0) {
+        if ((int) spinPrecio1.getValue() < 0) {
             JOptionPane.showMessageDialog(null, "Un producto no puede un precio negativo", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        }*/
+        }
 
-        //try {
+        try {
 
             prod.setNombre(txtNombre1.getText());
             prod.setCategoria(EtiCategoria1.getText());
@@ -256,9 +255,9 @@ public class VentanaProducto extends javax.swing.JFrame {
             prod.setCantidad((int) spinCantidadDef.getValue());
             prod.setPrecio((int) spinPrecio1.getValue());
             JOptionPane.showMessageDialog(null, "Se ha editado el producto "+prod.getNombre());
-        //} catch (Exception e) {
-        //    JOptionPane.showMessageDialog(null, "Ocurrió un error inesperado", "Error", JOptionPane.ERROR_MESSAGE);
-        //}
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error inesperado", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
@@ -272,17 +271,9 @@ public class VentanaProducto extends javax.swing.JFrame {
         txtNombre1.setText(prod.getNombre());
         txtCategoria1.setText(prod.getCategoria());
         System.out.println(" Antes de asignarolo en VentanaProducto.cargarProducto()");
-        System.out.println("prod.getcant: "+prod.getCantidad());
-        System.out.println("prod.getPrecio: "+prod.getPrecio());
-        
         
         spinCantidadDef.setValue(prod.getCantidad());
-        spinPrecio1.setValue(prod.getPrecio());
-        
-        System.out.println("VentanaProducto.cargarProducto()");
-              System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
-             System.out.println("SpinPrecio1: "+spinPrecio1.getValue());
-        
+        spinPrecio1.setValue(prod.getPrecio());    
     }
     //Hay variables que no existen.
     // Variables declaration - do not modify//GEN-BEGIN:variables
