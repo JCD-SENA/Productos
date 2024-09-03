@@ -50,9 +50,13 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtCodigoBusqueda" alignment="0" pref="71" max="32767" attributes="0"/>
+                  <Component id="txtCodigoBusqueda" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnEditar" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnEliminar" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="button1" min="-2" pref="76" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -62,11 +66,14 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="txtBuscarCategoria" max="32767" attributes="0"/>
-                  <Component id="btnBuscarPorCategoria" pref="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="txtBuscarCategoria" max="32767" attributes="0"/>
+                      <Component id="btnBuscarPorCategoria" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="button1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -130,6 +137,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCodigoBusqueda">
+    </Component>
+    <Component class="java.awt.Button" name="button1">
+      <Properties>
+        <Property name="label" type="java.lang.String" value="Refrescar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

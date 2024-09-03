@@ -29,78 +29,23 @@ public class VentanaProducto extends javax.swing.JFrame {
     private void initComponents() {
 
         txtCategoria = new javax.swing.JTextField();
-        btnConsultar = new java.awt.Button();
         txtNombre = new javax.swing.JTextField();
         txtCodigo = new javax.swing.JTextField();
-        btnCategoria1 = new java.awt.Button();
-        spinCantidad = new javax.swing.JSpinner();
+        btnEditar = new java.awt.Button();
+        spinCantidadDef = new javax.swing.JSpinner();
         spinPrecio = new javax.swing.JSpinner();
-        btnRegistrar1 = new java.awt.Button();
-        jLabel1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         etiCodigo = new javax.swing.JLabel();
         eitNombre = new javax.swing.JLabel();
         EtiCategoria = new javax.swing.JLabel();
         etiPrecio = new javax.swing.JLabel();
         etiCantidad = new javax.swing.JLabel();
-        txtCategoria1 = new javax.swing.JTextField();
-        txtNombre1 = new javax.swing.JTextField();
-        txtCodigo1 = new javax.swing.JTextField();
-        btnEditar = new java.awt.Button();
-        spinCantidadDef = new javax.swing.JSpinner();
-        spinPrecio1 = new javax.swing.JSpinner();
-        etiCodigo1 = new javax.swing.JLabel();
-        eitNombre1 = new javax.swing.JLabel();
-        EtiCategoria1 = new javax.swing.JLabel();
-        etiPrecio1 = new javax.swing.JLabel();
-        etiCantidad1 = new javax.swing.JLabel();
         btnBorrar = new java.awt.Button();
 
-        btnConsultar.setActionCommand("Consultar");
-        btnConsultar.setLabel("Consultar");
-        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultarActionPerformed(evt);
-            }
-        });
-
+        txtCodigo.setEditable(false);
+        txtCodigo.setForeground(new java.awt.Color(153, 153, 153));
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoActionPerformed(evt);
-            }
-        });
-
-        btnCategoria1.setLabel("Listar productos");
-
-        btnRegistrar1.setBackground(new java.awt.Color(0, 204, 0));
-        btnRegistrar1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnRegistrar1.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrar1.setLabel("Registrar");
-        btnRegistrar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrar1ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Registrar producto");
-
-        etiCodigo.setText("Código");
-
-        eitNombre.setText("Nombre");
-
-        EtiCategoria.setText("Categoría");
-
-        etiPrecio.setText("Precio");
-
-        etiCantidad.setText("Cantidad");
-
-        txtCodigo1.setEditable(false);
-        txtCodigo1.setForeground(new java.awt.Color(153, 153, 153));
-        txtCodigo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigo1ActionPerformed(evt);
             }
         });
 
@@ -111,15 +56,15 @@ public class VentanaProducto extends javax.swing.JFrame {
             }
         });
 
-        etiCodigo1.setText("Código");
+        etiCodigo.setText("Código");
 
-        eitNombre1.setText("Nombre");
+        eitNombre.setText("Nombre");
 
-        EtiCategoria1.setText("Categoría");
+        EtiCategoria.setText("Categoría");
 
-        etiPrecio1.setText("Precio");
+        etiPrecio.setText("Precio");
 
-        etiCantidad1.setText("Cantidad");
+        etiCantidad.setText("Cantidad");
 
         btnBorrar.setBackground(new java.awt.Color(204, 0, 0));
         btnBorrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -138,23 +83,23 @@ public class VentanaProducto extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(etiCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(etiCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(txtCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(eitNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(eitNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(EtiCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(EtiCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(txtCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(etiPrecio1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(etiPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(spinPrecio1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(spinPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(etiCantidad1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(etiCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
                         .addComponent(spinCantidadDef, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -170,29 +115,29 @@ public class VentanaProducto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(etiCodigo1))
-                    .addComponent(txtCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(etiCodigo))
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(eitNombre1))
-                    .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(eitNombre))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(EtiCategoria1))
-                    .addComponent(txtCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(EtiCategoria))
+                    .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(etiPrecio1)
-                    .addComponent(spinPrecio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(etiPrecio)
+                    .addComponent(spinPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(etiCantidad1))
+                        .addComponent(etiCantidad))
                     .addComponent(spinCantidadDef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,29 +150,17 @@ public class VentanaProducto extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnConsultarActionPerformed
-
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoActionPerformed
 
-    private void btnRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrar1ActionPerformed
-
-    private void txtCodigo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigo1ActionPerformed
-
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         System.out.println("VentanaProducto.btnEditarActionPerformed()");
         System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
-        System.out.println("SpinPrecio1: "+spinPrecio1.getValue());
+        System.out.println("SpinPrecio1: "+spinPrecio.getValue());
              
              
-        if (txtNombre1.getText().length() < 1) {
+        if (txtNombre.getText().length() < 1) {
             JOptionPane.showMessageDialog(null, "El producto debe tener un nombre", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -237,23 +170,23 @@ public class VentanaProducto extends javax.swing.JFrame {
             return;
         }
         
-        if (EtiCategoria1.getText().length() < 1)
+        if (EtiCategoria.getText().length() < 1)
             prod.setCategoria("Sin categoria.");
 
-        if ((int) spinPrecio1.getValue() < 0) {
+        if ((int) spinPrecio.getValue() < 0) {
             JOptionPane.showMessageDialog(null, "Un producto no puede un precio negativo", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         try {
 
-            prod.setNombre(txtNombre1.getText());
-            prod.setCategoria(EtiCategoria1.getText());
+            prod.setNombre(txtNombre.getText());
+            prod.setCategoria(EtiCategoria.getText());
             System.out.println("VentanaProducto.btnEditarActionPerformed()");
             System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
-             System.out.println("SpinPrecio1: "+spinPrecio1.getValue());
+             System.out.println("SpinPrecio1: "+spinPrecio.getValue());
             prod.setCantidad((int) spinCantidadDef.getValue());
-            prod.setPrecio((int) spinPrecio1.getValue());
+            prod.setPrecio((int) spinPrecio.getValue());
             JOptionPane.showMessageDialog(null, "Se ha editado el producto "+prod.getNombre());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ocurrió un error inesperado", "Error", JOptionPane.ERROR_MESSAGE);
@@ -267,42 +200,27 @@ public class VentanaProducto extends javax.swing.JFrame {
     public void cargarProducto (Producto producto, ManejarInventario inventario) {
         inv = inventario;
         prod = producto;
-        txtCodigo1.setText(prod.getCodigo());
-        txtNombre1.setText(prod.getNombre());
-        txtCategoria1.setText(prod.getCategoria());
+        txtCodigo.setText(prod.getCodigo());
+        txtNombre.setText(prod.getNombre());
+        txtCategoria.setText(prod.getCategoria());
         System.out.println(" Antes de asignarolo en VentanaProducto.cargarProducto()");
         
         spinCantidadDef.setValue(prod.getCantidad());
-        spinPrecio1.setValue(prod.getPrecio());    
+        spinPrecio.setValue(prod.getPrecio());    
     }
     //Hay variables que no existen.
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel EtiCategoria;
-    private javax.swing.JLabel EtiCategoria1;
     private java.awt.Button btnBorrar;
-    private java.awt.Button btnCategoria1;
-    private java.awt.Button btnConsultar;
     private java.awt.Button btnEditar;
-    private java.awt.Button btnRegistrar1;
     private javax.swing.JLabel eitNombre;
-    private javax.swing.JLabel eitNombre1;
     private javax.swing.JLabel etiCantidad;
-    private javax.swing.JLabel etiCantidad1;
     private javax.swing.JLabel etiCodigo;
-    private javax.swing.JLabel etiCodigo1;
     private javax.swing.JLabel etiPrecio;
-    private javax.swing.JLabel etiPrecio1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSpinner spinCantidad;
     private javax.swing.JSpinner spinCantidadDef;
     private javax.swing.JSpinner spinPrecio;
-    private javax.swing.JSpinner spinPrecio1;
     private javax.swing.JTextField txtCategoria;
-    private javax.swing.JTextField txtCategoria1;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextField txtCodigo1;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtNombre1;
     // End of variables declaration//GEN-END:variables
 }
