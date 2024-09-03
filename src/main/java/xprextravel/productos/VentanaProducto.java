@@ -17,6 +17,9 @@ public class VentanaProducto extends javax.swing.JFrame {
     
     public VentanaProducto() {
         initComponents();
+        System.out.println("VentanaProducto.<init>()");
+        System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
+        System.out.println("SpinPrecio1: "+spinPrecio1.getValue());
     }
 
     /**
@@ -47,7 +50,7 @@ public class VentanaProducto extends javax.swing.JFrame {
         txtNombre1 = new javax.swing.JTextField();
         txtCodigo1 = new javax.swing.JTextField();
         btnEditar = new java.awt.Button();
-        spinCantidad1 = new javax.swing.JSpinner();
+        spinCantidadDef = new javax.swing.JSpinner();
         spinPrecio1 = new javax.swing.JSpinner();
         etiCodigo1 = new javax.swing.JLabel();
         eitNombre1 = new javax.swing.JLabel();
@@ -136,61 +139,67 @@ public class VentanaProducto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(EtiCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(eitNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(etiCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(6, 6, 6)
                         .addComponent(txtCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(etiCantidad1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(etiPrecio1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(spinCantidad1)
-                            .addComponent(spinPrecio1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(eitNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(EtiCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(txtCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(etiPrecio1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(spinPrecio1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(etiCantidad1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(spinCantidadDef, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                        .addGap(10, 10, 10)
+                        .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(etiCodigo1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(etiCodigo1))
                     .addComponent(txtCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eitNombre1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(eitNombre1))
                     .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EtiCategoria1)
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(EtiCategoria1))
                     .addComponent(txtCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(etiPrecio1)
                     .addComponent(spinPrecio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(spinCantidad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(etiCantidad1))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(etiCantidad1))
+                    .addComponent(spinCantidadDef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -214,12 +223,17 @@ public class VentanaProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigo1ActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        System.out.println("VentanaProducto.btnEditarActionPerformed()");
+       System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
+       System.out.println("SpinPrecio1: "+spinPrecio1.getValue());
+             
+             
         if (txtNombre1.getText().length() < 1) {
             JOptionPane.showMessageDialog(null, "El producto debe tener un nombre", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        if ((int) spinCantidad1.getValue() < 0) {
+        if ((int) spinCantidadDef.getValue() < 0) {
             JOptionPane.showMessageDialog(null, "Un producto no puede tener una cantidad negativa", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -227,16 +241,24 @@ public class VentanaProducto extends javax.swing.JFrame {
         if (EtiCategoria1.getText().length() < 1)
             prod.setCategoria("Sin categoria.");
 
-        if ((double)(int) spinPrecio1.getValue() < 0) {
+        /*if ((int) spinPrecio1.getValue() < 0) {
             JOptionPane.showMessageDialog(null, "Un producto no puede un precio negativo", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        }
-        
-        prod.setNombre(txtNombre1.getText());
-        prod.setCategoria(EtiCategoria1.getText());
-        prod.setCantidad((int) spinCantidad1.getValue());
-        prod.setPrecio((double)(int) spinPrecio1.getValue());
-        JOptionPane.showMessageDialog(null, "Se ha editado el producto "+prod.getNombre());
+        }*/
+
+        //try {
+
+            prod.setNombre(txtNombre1.getText());
+            prod.setCategoria(EtiCategoria1.getText());
+            System.out.println("VentanaProducto.btnEditarActionPerformed()");
+            System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
+             System.out.println("SpinPrecio1: "+spinPrecio1.getValue());
+            prod.setCantidad((int) spinCantidadDef.getValue());
+            prod.setPrecio((int) spinPrecio1.getValue());
+            JOptionPane.showMessageDialog(null, "Se ha editado el producto "+prod.getNombre());
+        //} catch (Exception e) {
+        //    JOptionPane.showMessageDialog(null, "Ocurrió un error inesperado", "Error", JOptionPane.ERROR_MESSAGE);
+        //}
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
@@ -249,8 +271,18 @@ public class VentanaProducto extends javax.swing.JFrame {
         txtCodigo1.setText(prod.getCodigo());
         txtNombre1.setText(prod.getNombre());
         txtCategoria1.setText(prod.getCategoria());
-        spinCantidad1.setValue(prod.getCantidad());
+        System.out.println(" Antes de asignarolo en VentanaProducto.cargarProducto()");
+        System.out.println("prod.getcant: "+prod.getCantidad());
+        System.out.println("prod.getPrecio: "+prod.getPrecio());
+        
+        
+        spinCantidadDef.setValue(prod.getCantidad());
         spinPrecio1.setValue(prod.getPrecio());
+        
+        System.out.println("VentanaProducto.cargarProducto()");
+              System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
+             System.out.println("SpinPrecio1: "+spinPrecio1.getValue());
+        
     }
     //Hay variables que no existen.
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -272,7 +304,7 @@ public class VentanaProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSpinner spinCantidad;
-    private javax.swing.JSpinner spinCantidad1;
+    private javax.swing.JSpinner spinCantidadDef;
     private javax.swing.JSpinner spinPrecio;
     private javax.swing.JSpinner spinPrecio1;
     private javax.swing.JTextField txtCategoria;

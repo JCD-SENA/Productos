@@ -5,9 +5,9 @@ public class Producto {
     private String codigo;
     private String categoria;
     private int cantidad;
-    private double precio;
+    private int precio;
 
-    public Producto (String nombre, String codigo, String categoria, double precio, int cantidad) {
+    public Producto (String nombre, String codigo, String categoria, int precio, int cantidad) {
         this.nombre = nombre;
         this.codigo = codigo;
         if (categoria.length() < 1)
@@ -26,11 +26,11 @@ public class Producto {
         this.nombre = nombre;
     }
     
-    public double getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
 
