@@ -1,4 +1,6 @@
-package xprextravel.productos;
+package modelo;
+
+import javax.swing.JOptionPane;
 
 public class Producto {
     private String nombre;
@@ -56,6 +58,31 @@ public class Producto {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+    
+    public void editar(String nombre, String categoria, int cantidad, int precio) {
+        if (nombre.length() < 1) {
+            JOptionPane.showMessageDialog(null, "El producto debe tener un nombre", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (cantidad < 0) {
+            JOptionPane.showMessageDialog(null, "Un producto no puede tener una cantidad negativa", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (categoria.length() < 1)
+            this.setCategoria("Sin categoria.");
+
+        if (precio < 0) {
+            JOptionPane.showMessageDialog(null, "Un producto no puede un precio negativo", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        this.setNombre(nombre);
+        this.setCategoria(categoria);
+        this.setCantidad(cantidad);
+        this.setPrecio(precio);
     }
 
     @Override

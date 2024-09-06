@@ -1,4 +1,4 @@
-package xprextravel.productos;
+package modelo;
 
 import java.util.HashMap;
 import javax.swing.JOptionPane;

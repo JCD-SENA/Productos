@@ -1,6 +1,8 @@
-package xprextravel.productos;
+package vista;
 
 import javax.swing.JOptionPane;
+import modelo.ManejarInventario;
+import modelo.Producto;
 
 public class VentanaRegistrar extends javax.swing.JFrame {
 
@@ -196,10 +198,6 @@ public class VentanaRegistrar extends javax.swing.JFrame {
 
     private void btnRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrar1ActionPerformed
         try {
-            
-            System.out.println("VentanaRegistrar.btnRegistrar1ActionPerformed()");
-            System.out.println("SpincantidadDef: "+spinCantidad.getValue());
-            System.out.println("SpinPrecio1: "+spinPrecio.getValue());
             Producto prod = new Producto(txtNombre.getText(), txtCodigo.getText(), txtCategoria.getText(), (int) spinPrecio.getValue(), (int) spinCantidad.getValue());
             miInventario.agregarProducto(prod);
             limpiar();

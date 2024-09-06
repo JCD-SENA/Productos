@@ -2,9 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package xprextravel.productos;
+package vista;
 
 import javax.swing.JOptionPane;
+import modelo.ManejarInventario;
+import modelo.Producto;
 
 /**
  *
@@ -155,38 +157,8 @@ public class VentanaProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigoActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        System.out.println("VentanaProducto.btnEditarActionPerformed()");
-        System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
-        System.out.println("SpinPrecio1: "+spinPrecio.getValue());
-             
-             
-        if (txtNombre.getText().length() < 1) {
-            JOptionPane.showMessageDialog(null, "El producto debe tener un nombre", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        if ((int) spinCantidadDef.getValue() < 0) {
-            JOptionPane.showMessageDialog(null, "Un producto no puede tener una cantidad negativa", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        if (EtiCategoria.getText().length() < 1)
-            prod.setCategoria("Sin categoria.");
-
-        if ((int) spinPrecio.getValue() < 0) {
-            JOptionPane.showMessageDialog(null, "Un producto no puede un precio negativo", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
         try {
-
-            prod.setNombre(txtNombre.getText());
-            prod.setCategoria(EtiCategoria.getText());
-            System.out.println("VentanaProducto.btnEditarActionPerformed()");
-            System.out.println("SpincantidadDef: "+spinCantidadDef.getValue());
-             System.out.println("SpinPrecio1: "+spinPrecio.getValue());
-            prod.setCantidad((int) spinCantidadDef.getValue());
-            prod.setPrecio((int) spinPrecio.getValue());
+            prod.editar(txtNombre.getText(), EtiCategoria.getText(), (int) spinCantidadDef.getValue(), (int) spinPrecio.getValue());
             JOptionPane.showMessageDialog(null, "Se ha editado el producto "+prod.getNombre());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ocurrió un error inesperado", "Error", JOptionPane.ERROR_MESSAGE);
@@ -203,8 +175,6 @@ public class VentanaProducto extends javax.swing.JFrame {
         txtCodigo.setText(prod.getCodigo());
         txtNombre.setText(prod.getNombre());
         txtCategoria.setText(prod.getCategoria());
-        System.out.println(" Antes de asignarolo en VentanaProducto.cargarProducto()");
-        
         spinCantidadDef.setValue(prod.getCantidad());
         spinPrecio.setValue(prod.getPrecio());    
     }
