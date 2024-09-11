@@ -87,6 +87,6 @@ public class Producto {
 
     @Override
     public String toString() {
-        return nombre + " (" + codigo + ", "+categoria+") tiene " + cantidad + " unidades y cuesta "+precio+"¤";
+        return nombre + " (" + codigo + ", "+categoria+") tiene " + cantidad + " unidades y cuesta "+precio+"$ COP";
     }
 }
