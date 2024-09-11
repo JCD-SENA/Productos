@@ -7,6 +7,8 @@ package vista;
 import modelo.ManejarInventario;
 import modelo.Producto;
 
+import controlador.Controlador;
+
 /**
  *
  * @author juanc
@@ -14,10 +16,13 @@ import modelo.Producto;
 public class VentanaListaProductos extends javax.swing.JFrame {
 
     ManejarInventario inv;
-    private VentanaProducto miProducto;
+    private Controlador controlador;
+    
+    public void setControlador(Controlador controlador) {
+        this.controlador = controlador;
+    }
     
     public VentanaListaProductos() {
-        miProducto = new VentanaProducto();
         initComponents();
     }
 
@@ -138,8 +143,7 @@ public class VentanaListaProductos extends javax.swing.JFrame {
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         Producto prod = inv.consultarProducto(txtCodigoBusqueda.getText());
         if (prod != null) {
-            miProducto.cargarProducto(prod, inv);
-            miProducto.setVisible(true);
+            controlador.cargarProducto(prod);
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 

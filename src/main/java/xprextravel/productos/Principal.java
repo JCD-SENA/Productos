@@ -13,8 +13,10 @@ public class Principal {
         VentanaRegistrar ventanaRegistrar = new VentanaRegistrar();
         VentanaProducto ventanaProducto = new VentanaProducto();
         VentanaListaProductos ventanaListaProductos = new VentanaListaProductos();
-
-
+        
         Controlador controlador = new Controlador(ventanaRegistrar, inventario, ventanaProducto, ventanaListaProductos);
+
+        ventanaListaProductos.setControlador(controlador);
+        ventanaProducto.setControlador(controlador);
     }
 }

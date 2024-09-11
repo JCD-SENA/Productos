@@ -4,6 +4,7 @@
  */
 package vista;
 
+import controlador.Controlador;
 import javax.swing.JOptionPane;
 import modelo.ManejarInventario;
 import modelo.Producto;
@@ -15,7 +16,11 @@ import modelo.Producto;
 public class VentanaProducto extends javax.swing.JFrame {
 
     Producto prod;
-    ManejarInventario inv;
+    private Controlador controlador;
+    
+    public void setControlador(Controlador controlador) {
+        this.controlador = controlador;
+    }
     
     public VentanaProducto() {
         initComponents();
@@ -160,17 +165,18 @@ public class VentanaProducto extends javax.swing.JFrame {
         try {
             prod.editar(txtNombre.getText(), txtCategoria.getText(), (int) spinCantidadDef.getValue(), (int) spinPrecio.getValue());
             JOptionPane.showMessageDialog(null, "Se ha editado el producto "+prod.getNombre());
+            controlador.refrescar();
+            controlador.ocultarProducto();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ocurrió un error inesperado", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
-        inv.eliminarProducto(prod.getCodigo());
+        controlador.eliminarProducto(prod.getCodigo());
     }//GEN-LAST:event_btnBorrarActionPerformed
 
-    public void cargarProducto (Producto producto, ManejarInventario inventario) {
-        inv = inventario;
+    public void cargarProducto (Producto producto) {
         prod = producto;
         txtCodigo.setText(prod.getCodigo());
         txtNombre.setText(prod.getNombre());

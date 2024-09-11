@@ -21,6 +21,10 @@ public class Controlador {
 
         initControlador();
     }
+    
+    public void ocultarProducto () {
+        ventanaProducto.setVisible(false);
+    }
 
     // Inicializa el controlador y establece la visibilidad de la ventana de registro
     private void initControlador() {
@@ -37,10 +41,18 @@ public class Controlador {
         Producto prod = new Producto(nombre, codigo, categoria, precio, cantidad);
         inventario.agregarProducto(prod);
     }
+    
+    public void refrescar () {
+        ventanaListaProductos.cargar(inventario);
+    }
 
     // Consulta un producto en el inventario por su código
     public Producto consultarProducto(String codigo) {
         return inventario.consultarProducto(codigo);
+    }
+    
+    public void eliminarProducto(String codigo) {
+        inventario.eliminarProducto(codigo);
     }
 
     // Muestra la lista de productos en la ventana correspondiente
@@ -54,7 +66,7 @@ public class Controlador {
         if (producto == null) {
             throw new IllegalArgumentException("El producto no puede ser nulo.");
         }
-        ventanaProducto.cargarProducto(producto, inventario);
+        ventanaProducto.cargarProducto(producto);
         ventanaProducto.setVisible(true);
     }
 }
