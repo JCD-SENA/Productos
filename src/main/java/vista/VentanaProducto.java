@@ -158,7 +158,7 @@ public class VentanaProducto extends javax.swing.JFrame {
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         try {
-            prod.editar(txtNombre.getText(), EtiCategoria.getText(), (int) spinCantidadDef.getValue(), (int) spinPrecio.getValue());
+            prod.editar(txtNombre.getText(), txtCategoria.getText(), (int) spinCantidadDef.getValue(), (int) spinPrecio.getValue());
             JOptionPane.showMessageDialog(null, "Se ha editado el producto "+prod.getNombre());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ocurrió un error inesperado", "Error", JOptionPane.ERROR_MESSAGE);
