@@ -1,22 +1,21 @@
 package vista;
 
-import javax.swing.JOptionPane;
-import modelo.ManejarInventario;
+import controlador.Controlador;
+import javax.swing.*;
 import modelo.Producto;
+
 
 public class VentanaRegistrar extends javax.swing.JFrame {
 
-    private ManejarInventario miInventario;
-    private VentanaProducto miProducto;
-    private VentanaListaProductos miInventarioView;
-    
-    /**
-     * Creates new form VentanaRegistrar
-     */
+    private Controlador controlador;  // Se agrega un controlador
+
+    public void setControlador(Controlador controlador) {
+        this.controlador = controlador;
+    }
+
     public VentanaRegistrar() {
-        miInventario = new ManejarInventario();
-        miProducto = new VentanaProducto();
-        miInventarioView = new VentanaListaProductos();
+        /**  miProducto = new VentanaProducto();
+         miInventarioView = new VentanaListaProductos(); **/
         initComponents();
     }
 
@@ -27,7 +26,7 @@ public class VentanaRegistrar extends javax.swing.JFrame {
         spinPrecio.setValue(0);
         spinCantidad.setValue(0);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -196,28 +195,26 @@ public class VentanaRegistrar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoActionPerformed
 
-    private void btnRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrar1ActionPerformed
+    private void btnRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {
         try {
-            Producto prod = new Producto(txtNombre.getText(), txtCodigo.getText(), txtCategoria.getText(), (int) spinPrecio.getValue(), (int) spinCantidad.getValue());
-            miInventario.agregarProducto(prod);
+            controlador.registrarProducto(txtNombre.getText(), txtCodigo.getText(), txtCategoria.getText(),
+                    (int) spinPrecio.getValue(), (int) spinCantidad.getValue());
             limpiar();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Uno de los valores ingresados es invalido.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Uno de los valores ingresados es inválido.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnRegistrar1ActionPerformed
+    }
 
-    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        Producto prod = miInventario.consultarProducto(txtCodigo.getText());
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {
+        Producto prod = controlador.consultarProducto(txtCodigo.getText());
         if (prod != null) {
-            miProducto.cargarProducto(prod, miInventario);
-            miProducto.setVisible(true);
+            controlador.cargarProducto(prod);
         }
-    }//GEN-LAST:event_btnConsultarActionPerformed
+    }
 
-    private void btnCategoria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoria1ActionPerformed
-        miInventarioView.cargar(miInventario);
-        miInventarioView.setVisible(true);
-    }//GEN-LAST:event_btnCategoria1ActionPerformed
+    private void btnCategoria1ActionPerformed(java.awt.event.ActionEvent evt) {
+        controlador.listarProductos();
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
